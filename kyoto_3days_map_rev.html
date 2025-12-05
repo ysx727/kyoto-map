@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c9f7c935f97bf16c8fcb91e8aed75e3e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="
+position: fixed;
+bottom: 10px; right: 10px;
+width: 210px;
+background-color: rgba(255, 255, 255, 0.9);
+border: 1px solid grey;
+z-index: 9999;
+font-size: 12px;
+padding: 6px;
+">
+<b>■ マーカー色の意味</b><br>
+<i class="fa fa-star" style="color:red"></i> 12月9日（1日目）<br>
+<i class="fa fa-star" style="color:blue"></i> 12月10日（2日目）<br>
+<i class="fa fa-star" style="color:green"></i> 12月11日（3日目）<br>
+<i class="fa fa-star" style="color:purple"></i> 宿泊（ホテル）<br>
+<i class="fa fa-star" style="color:orange"></i> 二条城・伏見稲荷<br>
+</div>
+    
+            <div class="folium-map" id="map_c9f7c935f97bf16c8fcb91e8aed75e3e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c9f7c935f97bf16c8fcb91e8aed75e3e = L.map(
+                "map_c9f7c935f97bf16c8fcb91e8aed75e3e",
+                {
+                    center: [35.01, 135.76],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+
+            
+
+        
+    
+            var tile_layer_14a62898e346034bfa02f90a1b8abd48 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_14a62898e346034bfa02f90a1b8abd48.addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var marker_7e07bdfc325f24b8a87ceef2aabe4d4b = L.marker(
+                [34.9889, 135.7745],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_732953b6cc8fac83ee999635bd9c7d50 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ba05813f843646843db4ea8fba9f9977 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a9162d5e7dc8050fb60600631e89b512 = $(`<div id="html_a9162d5e7dc8050fb60600631e89b512" style="width: 100.0%; height: 100.0%;">三十三間堂</div>`)[0];
+                popup_ba05813f843646843db4ea8fba9f9977.setContent(html_a9162d5e7dc8050fb60600631e89b512);
+            
+        
+
+        marker_7e07bdfc325f24b8a87ceef2aabe4d4b.bindPopup(popup_ba05813f843646843db4ea8fba9f9977)
+        ;
+
+        
+    
+    
+            marker_7e07bdfc325f24b8a87ceef2aabe4d4b.bindTooltip(
+                `<div>
+                     三十三間堂
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7e07bdfc325f24b8a87ceef2aabe4d4b.setIcon(icon_732953b6cc8fac83ee999635bd9c7d50);
+            
+    
+            var marker_bd980e4416fbd17f214ef403545944f0 = L.marker(
+                [35.003, 135.7763],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_55df1c8f58b0378601e43fd6e15a09ee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_56684454c569d51b830eb3f587831ed7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_560cf2d89dc1db7851cd03a464ec3c56 = $(`<div id="html_560cf2d89dc1db7851cd03a464ec3c56" style="width: 100.0%; height: 100.0%;">知恩院</div>`)[0];
+                popup_56684454c569d51b830eb3f587831ed7.setContent(html_560cf2d89dc1db7851cd03a464ec3c56);
+            
+        
+
+        marker_bd980e4416fbd17f214ef403545944f0.bindPopup(popup_56684454c569d51b830eb3f587831ed7)
+        ;
+
+        
+    
+    
+            marker_bd980e4416fbd17f214ef403545944f0.bindTooltip(
+                `<div>
+                     知恩院
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bd980e4416fbd17f214ef403545944f0.setIcon(icon_55df1c8f58b0378601e43fd6e15a09ee);
+            
+    
+            var marker_fbdb111fe488945ab022764cf0c522a8 = L.marker(
+                [34.9784, 135.746],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_1dada9590a271070019a389ca8eb4ca1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e5b2f85d29cefc0a42aef3c74e46276d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_60bae36a1fd9a07ba9373c5601a04e5d = $(`<div id="html_60bae36a1fd9a07ba9373c5601a04e5d" style="width: 100.0%; height: 100.0%;">東寺</div>`)[0];
+                popup_e5b2f85d29cefc0a42aef3c74e46276d.setContent(html_60bae36a1fd9a07ba9373c5601a04e5d);
+            
+        
+
+        marker_fbdb111fe488945ab022764cf0c522a8.bindPopup(popup_e5b2f85d29cefc0a42aef3c74e46276d)
+        ;
+
+        
+    
+    
+            marker_fbdb111fe488945ab022764cf0c522a8.bindTooltip(
+                `<div>
+                     東寺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fbdb111fe488945ab022764cf0c522a8.setIcon(icon_1dada9590a271070019a389ca8eb4ca1);
+            
+    
+            var marker_ee7207ce75dcbb4bf63360ac549426ac = L.marker(
+                [35.0099, 135.7594],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_a7d340a017fc55fcf22ec7788b20525e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ba37de302276a65bcdf2df99c23f70d5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f593df0f211e8b04715454c7f5adfe95 = $(`<div id="html_f593df0f211e8b04715454c7f5adfe95" style="width: 100.0%; height: 100.0%;">モリタ屋（四条猪熊）</div>`)[0];
+                popup_ba37de302276a65bcdf2df99c23f70d5.setContent(html_f593df0f211e8b04715454c7f5adfe95);
+            
+        
+
+        marker_ee7207ce75dcbb4bf63360ac549426ac.bindPopup(popup_ba37de302276a65bcdf2df99c23f70d5)
+        ;
+
+        
+    
+    
+            marker_ee7207ce75dcbb4bf63360ac549426ac.bindTooltip(
+                `<div>
+                     モリタ屋（四条猪熊）
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ee7207ce75dcbb4bf63360ac549426ac.setIcon(icon_a7d340a017fc55fcf22ec7788b20525e);
+            
+    
+            var marker_a0c7d28e8aa076b4f09787d953ded239 = L.marker(
+                [35.007, 135.7686],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_56919fb22fbc4db92664dbebb84d33e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7585d2474a4627861ffe3f33bc512592 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6c49c86aae06944132e04f21c0656e51 = $(`<div id="html_6c49c86aae06944132e04f21c0656e51" style="width: 100.0%; height: 100.0%;">権太呂 本店</div>`)[0];
+                popup_7585d2474a4627861ffe3f33bc512592.setContent(html_6c49c86aae06944132e04f21c0656e51);
+            
+        
+
+        marker_a0c7d28e8aa076b4f09787d953ded239.bindPopup(popup_7585d2474a4627861ffe3f33bc512592)
+        ;
+
+        
+    
+    
+            marker_a0c7d28e8aa076b4f09787d953ded239.bindTooltip(
+                `<div>
+                     権太呂 本店
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a0c7d28e8aa076b4f09787d953ded239.setIcon(icon_56919fb22fbc4db92664dbebb84d33e6);
+            
+    
+            var marker_66ed6675e498e971c264f9d3b00f6933 = L.marker(
+                [35.0513, 135.7313],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_2f4d0be951ca72fe78554ff5d523860e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_38be1217142229cd1f9601e5fb3056d0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1a45895f758f329b1c8230e1c248aa06 = $(`<div id="html_1a45895f758f329b1c8230e1c248aa06" style="width: 100.0%; height: 100.0%;">光悦寺</div>`)[0];
+                popup_38be1217142229cd1f9601e5fb3056d0.setContent(html_1a45895f758f329b1c8230e1c248aa06);
+            
+        
+
+        marker_66ed6675e498e971c264f9d3b00f6933.bindPopup(popup_38be1217142229cd1f9601e5fb3056d0)
+        ;
+
+        
+    
+    
+            marker_66ed6675e498e971c264f9d3b00f6933.bindTooltip(
+                `<div>
+                     光悦寺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_66ed6675e498e971c264f9d3b00f6933.setIcon(icon_2f4d0be951ca72fe78554ff5d523860e);
+            
+    
+            var marker_ab577fbd905dfecf50941408e6e9930d = L.marker(
+                [35.0504, 135.7304],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_1de3e2315f7adc7532d898c3a126f9f9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a199c9a8fe09c6b6b77b611607f78e15 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7035287d1f8b2c3ae9299cd83042a28c = $(`<div id="html_7035287d1f8b2c3ae9299cd83042a28c" style="width: 100.0%; height: 100.0%;">源光庵</div>`)[0];
+                popup_a199c9a8fe09c6b6b77b611607f78e15.setContent(html_7035287d1f8b2c3ae9299cd83042a28c);
+            
+        
+
+        marker_ab577fbd905dfecf50941408e6e9930d.bindPopup(popup_a199c9a8fe09c6b6b77b611607f78e15)
+        ;
+
+        
+    
+    
+            marker_ab577fbd905dfecf50941408e6e9930d.bindTooltip(
+                `<div>
+                     源光庵
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ab577fbd905dfecf50941408e6e9930d.setIcon(icon_1de3e2315f7adc7532d898c3a126f9f9);
+            
+    
+            var marker_b111ba7084ceba8f8117dff080c0db7f = L.marker(
+                [35.0088, 135.7963],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_8f1cd53a11320200f63721614ca87afa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_de78b352392c4643403517b87d5315fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c7161adeafbc53810a7a55fd7bbc7d6 = $(`<div id="html_5c7161adeafbc53810a7a55fd7bbc7d6" style="width: 100.0%; height: 100.0%;">天授庵</div>`)[0];
+                popup_de78b352392c4643403517b87d5315fa.setContent(html_5c7161adeafbc53810a7a55fd7bbc7d6);
+            
+        
+
+        marker_b111ba7084ceba8f8117dff080c0db7f.bindPopup(popup_de78b352392c4643403517b87d5315fa)
+        ;
+
+        
+    
+    
+            marker_b111ba7084ceba8f8117dff080c0db7f.bindTooltip(
+                `<div>
+                     天授庵
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b111ba7084ceba8f8117dff080c0db7f.setIcon(icon_8f1cd53a11320200f63721614ca87afa);
+            
+    
+            var marker_9dc90a1ddd85ddeb69bef71f0d1aa677 = L.marker(
+                [35.0018, 135.7808],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_1928a1571b07e884d771dec1b12f0b1d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_25b4f98571129b7c83e7676f47174e58 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_53625673143da06aedde15d58bbfa8bc = $(`<div id="html_53625673143da06aedde15d58bbfa8bc" style="width: 100.0%; height: 100.0%;">高台寺</div>`)[0];
+                popup_25b4f98571129b7c83e7676f47174e58.setContent(html_53625673143da06aedde15d58bbfa8bc);
+            
+        
+
+        marker_9dc90a1ddd85ddeb69bef71f0d1aa677.bindPopup(popup_25b4f98571129b7c83e7676f47174e58)
+        ;
+
+        
+    
+    
+            marker_9dc90a1ddd85ddeb69bef71f0d1aa677.bindTooltip(
+                `<div>
+                     高台寺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9dc90a1ddd85ddeb69bef71f0d1aa677.setIcon(icon_1928a1571b07e884d771dec1b12f0b1d);
+            
+    
+            var marker_738cd197ff188673b40a1491f4bd3d4e = L.marker(
+                [35.0039, 135.7787],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_bb80b05a9548e81e0622e7355f150183 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7b8d7b79d9e3b3a23ac58b36519762e2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e0b995007b08a786f870e08cebad9231 = $(`<div id="html_e0b995007b08a786f870e08cebad9231" style="width: 100.0%; height: 100.0%;">鍵善良房（祇園）</div>`)[0];
+                popup_7b8d7b79d9e3b3a23ac58b36519762e2.setContent(html_e0b995007b08a786f870e08cebad9231);
+            
+        
+
+        marker_738cd197ff188673b40a1491f4bd3d4e.bindPopup(popup_7b8d7b79d9e3b3a23ac58b36519762e2)
+        ;
+
+        
+    
+    
+            marker_738cd197ff188673b40a1491f4bd3d4e.bindTooltip(
+                `<div>
+                     鍵善良房（祇園）
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_738cd197ff188673b40a1491f4bd3d4e.setIcon(icon_bb80b05a9548e81e0622e7355f150183);
+            
+    
+            var marker_d85ebf228ab77a62d0d30bcfa84fb963 = L.marker(
+                [35.0033, 135.768],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_a29811a102f0c9d83510d3108d26cca5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_10ae0a0e8cf558632cd7f08ad90f6da8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_35a27f9cfa4b3e97da4b2795dbf6f3a8 = $(`<div id="html_35a27f9cfa4b3e97da4b2795dbf6f3a8" style="width: 100.0%; height: 100.0%;">東華菜館</div>`)[0];
+                popup_10ae0a0e8cf558632cd7f08ad90f6da8.setContent(html_35a27f9cfa4b3e97da4b2795dbf6f3a8);
+            
+        
+
+        marker_d85ebf228ab77a62d0d30bcfa84fb963.bindPopup(popup_10ae0a0e8cf558632cd7f08ad90f6da8)
+        ;
+
+        
+    
+    
+            marker_d85ebf228ab77a62d0d30bcfa84fb963.bindTooltip(
+                `<div>
+                     東華菜館
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d85ebf228ab77a62d0d30bcfa84fb963.setIcon(icon_a29811a102f0c9d83510d3108d26cca5);
+            
+    
+            var marker_59bcd42865a5b2db17810cdad2211054 = L.marker(
+                [34.9948, 135.785],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_5e8e6052a23f8dc0f6df6d119bc2f090 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6c7ac255d7cfe8869b5b26498a926694 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d94344389ceb05e71fe374bf649ba1aa = $(`<div id="html_d94344389ceb05e71fe374bf649ba1aa" style="width: 100.0%; height: 100.0%;">清水寺</div>`)[0];
+                popup_6c7ac255d7cfe8869b5b26498a926694.setContent(html_d94344389ceb05e71fe374bf649ba1aa);
+            
+        
+
+        marker_59bcd42865a5b2db17810cdad2211054.bindPopup(popup_6c7ac255d7cfe8869b5b26498a926694)
+        ;
+
+        
+    
+    
+            marker_59bcd42865a5b2db17810cdad2211054.bindTooltip(
+                `<div>
+                     清水寺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_59bcd42865a5b2db17810cdad2211054.setIcon(icon_5e8e6052a23f8dc0f6df6d119bc2f090);
+            
+    
+            var marker_7ba2dfc98d8e1ed627714cf2a1fbc140 = L.marker(
+                [35.0045, 135.7684],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_af2375c180569c9dfd93e59e3eb1f267 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e05de81cf42fed7ad8c00ded5cc92382 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_61399bcdf22992b7ac57c5545f2f7302 = $(`<div id="html_61399bcdf22992b7ac57c5545f2f7302" style="width: 100.0%; height: 100.0%;">居酒屋たつみ（四条）</div>`)[0];
+                popup_e05de81cf42fed7ad8c00ded5cc92382.setContent(html_61399bcdf22992b7ac57c5545f2f7302);
+            
+        
+
+        marker_7ba2dfc98d8e1ed627714cf2a1fbc140.bindPopup(popup_e05de81cf42fed7ad8c00ded5cc92382)
+        ;
+
+        
+    
+    
+            marker_7ba2dfc98d8e1ed627714cf2a1fbc140.bindTooltip(
+                `<div>
+                     居酒屋たつみ（四条）
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7ba2dfc98d8e1ed627714cf2a1fbc140.setIcon(icon_af2375c180569c9dfd93e59e3eb1f267);
+            
+    
+            var marker_e6efcaf4633c5e574c2e9dc58be5719d = L.marker(
+                [35.0096, 135.798],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_f23f8f2bc333f7970fa5a1cd14e8a6d9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_70379ea4993a9e9a79d4338bac9fc866 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d7054abab3d0717c8dfa9706d6147d23 = $(`<div id="html_d7054abab3d0717c8dfa9706d6147d23" style="width: 100.0%; height: 100.0%;">順正（南禅寺前）</div>`)[0];
+                popup_70379ea4993a9e9a79d4338bac9fc866.setContent(html_d7054abab3d0717c8dfa9706d6147d23);
+            
+        
+
+        marker_e6efcaf4633c5e574c2e9dc58be5719d.bindPopup(popup_70379ea4993a9e9a79d4338bac9fc866)
+        ;
+
+        
+    
+    
+            marker_e6efcaf4633c5e574c2e9dc58be5719d.bindTooltip(
+                `<div>
+                     順正（南禅寺前）
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e6efcaf4633c5e574c2e9dc58be5719d.setIcon(icon_f23f8f2bc333f7970fa5a1cd14e8a6d9);
+            
+    
+            var marker_39666e02a8dccbe892a4f4f156cc816a = L.marker(
+                [35.119, 135.8247],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_c41eb4b3487f0cf459f40d48dbde06f3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4ae10a4b71e6a30dfc6852981caae1dd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0425e63a95fc073fd272ad484bc09534 = $(`<div id="html_0425e63a95fc073fd272ad484bc09534" style="width: 100.0%; height: 100.0%;">寂光院</div>`)[0];
+                popup_4ae10a4b71e6a30dfc6852981caae1dd.setContent(html_0425e63a95fc073fd272ad484bc09534);
+            
+        
+
+        marker_39666e02a8dccbe892a4f4f156cc816a.bindPopup(popup_4ae10a4b71e6a30dfc6852981caae1dd)
+        ;
+
+        
+    
+    
+            marker_39666e02a8dccbe892a4f4f156cc816a.bindTooltip(
+                `<div>
+                     寂光院
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_39666e02a8dccbe892a4f4f156cc816a.setIcon(icon_c41eb4b3487f0cf459f40d48dbde06f3);
+            
+    
+            var marker_d509c76f562737a2a7eba3f04dfb9822 = L.marker(
+                [35.1216, 135.828],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_6a114c5885cb4a86cfb045ee65e9ae47 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e969891fc19810b555432d6b22c019ae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_714c7ee17270184d8def6fa2a9cc6fb8 = $(`<div id="html_714c7ee17270184d8def6fa2a9cc6fb8" style="width: 100.0%; height: 100.0%;">三千院</div>`)[0];
+                popup_e969891fc19810b555432d6b22c019ae.setContent(html_714c7ee17270184d8def6fa2a9cc6fb8);
+            
+        
+
+        marker_d509c76f562737a2a7eba3f04dfb9822.bindPopup(popup_e969891fc19810b555432d6b22c019ae)
+        ;
+
+        
+    
+    
+            marker_d509c76f562737a2a7eba3f04dfb9822.bindTooltip(
+                `<div>
+                     三千院
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d509c76f562737a2a7eba3f04dfb9822.setIcon(icon_6a114c5885cb4a86cfb045ee65e9ae47);
+            
+    
+            var marker_f38c26d72bc271294a43b02a2e3cc43d = L.marker(
+                [35.0155, 135.678],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_d4af458b48123563c529cc06793921c4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_68835dc3f62fef91a2813eef541c4da4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8b015fe4958fc56fc9aa08fca7b37aad = $(`<div id="html_8b015fe4958fc56fc9aa08fca7b37aad" style="width: 100.0%; height: 100.0%;">天龍寺</div>`)[0];
+                popup_68835dc3f62fef91a2813eef541c4da4.setContent(html_8b015fe4958fc56fc9aa08fca7b37aad);
+            
+        
+
+        marker_f38c26d72bc271294a43b02a2e3cc43d.bindPopup(popup_68835dc3f62fef91a2813eef541c4da4)
+        ;
+
+        
+    
+    
+            marker_f38c26d72bc271294a43b02a2e3cc43d.bindTooltip(
+                `<div>
+                     天龍寺
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f38c26d72bc271294a43b02a2e3cc43d.setIcon(icon_d4af458b48123563c529cc06793921c4);
+            
+    
+            var marker_514d1e14249a04a630311891a400cf36 = L.marker(
+                [34.9723, 135.756],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_242a08efdb9b0d294079d6c5d62ad6f4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5e1e767b691b6342820729cf1a44df68 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_44392cfde92dd5056383d435b2c99e47 = $(`<div id="html_44392cfde92dd5056383d435b2c99e47" style="width: 100.0%; height: 100.0%;">アリストンホテル京都十条</div>`)[0];
+                popup_5e1e767b691b6342820729cf1a44df68.setContent(html_44392cfde92dd5056383d435b2c99e47);
+            
+        
+
+        marker_514d1e14249a04a630311891a400cf36.bindPopup(popup_5e1e767b691b6342820729cf1a44df68)
+        ;
+
+        
+    
+    
+            marker_514d1e14249a04a630311891a400cf36.bindTooltip(
+                `<div>
+                     アリストンホテル京都十条
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_514d1e14249a04a630311891a400cf36.setIcon(icon_242a08efdb9b0d294079d6c5d62ad6f4);
+            
+    
+            var marker_8001aecc76881b715302ecd7bc0a4b68 = L.marker(
+                [35.0142, 135.7481],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_7d80c8b04e5406e75ab42bbda4040a0f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dfe29c0cb0b2bbd55313de1c512c6cbc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_41416cf5b9831dd9fd872ceecb7717ef = $(`<div id="html_41416cf5b9831dd9fd872ceecb7717ef" style="width: 100.0%; height: 100.0%;">二条城</div>`)[0];
+                popup_dfe29c0cb0b2bbd55313de1c512c6cbc.setContent(html_41416cf5b9831dd9fd872ceecb7717ef);
+            
+        
+
+        marker_8001aecc76881b715302ecd7bc0a4b68.bindPopup(popup_dfe29c0cb0b2bbd55313de1c512c6cbc)
+        ;
+
+        
+    
+    
+            marker_8001aecc76881b715302ecd7bc0a4b68.bindTooltip(
+                `<div>
+                     二条城
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8001aecc76881b715302ecd7bc0a4b68.setIcon(icon_7d80c8b04e5406e75ab42bbda4040a0f);
+            
+    
+            var marker_0277196e25264fd26bdbdcfd2d0eb3cf = L.marker(
+                [34.9671, 135.7727],
+                {
+}
+            ).addTo(map_c9f7c935f97bf16c8fcb91e8aed75e3e);
+        
+    
+            var icon_8f1b1b629dda87513a32824d7b07f4d6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7863eb9e7b90dd8843fea3d8425c8883 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bcf7d879b6aff62b3c3d1268279c21cd = $(`<div id="html_bcf7d879b6aff62b3c3d1268279c21cd" style="width: 100.0%; height: 100.0%;">伏見稲荷大社</div>`)[0];
+                popup_7863eb9e7b90dd8843fea3d8425c8883.setContent(html_bcf7d879b6aff62b3c3d1268279c21cd);
+            
+        
+
+        marker_0277196e25264fd26bdbdcfd2d0eb3cf.bindPopup(popup_7863eb9e7b90dd8843fea3d8425c8883)
+        ;
+
+        
+    
+    
+            marker_0277196e25264fd26bdbdcfd2d0eb3cf.bindTooltip(
+                `<div>
+                     伏見稲荷大社
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0277196e25264fd26bdbdcfd2d0eb3cf.setIcon(icon_8f1b1b629dda87513a32824d7b07f4d6);
+            
+    
+            map_c9f7c935f97bf16c8fcb91e8aed75e3e.fitBounds(
+                [[34.9671, 135.678], [35.1216, 135.828]],
+                {}
+            );
+        
+</script>
+</html>
